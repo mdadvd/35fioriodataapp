@@ -1,0 +1,43 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="tcs.fin.ap.controller.Add"
+	xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="Create New Product">
+				<content>
+					<VBox class="sapUiSmallMargin">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Address" labelSpanXL="3" labelSpanL="3"
+							labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+							columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="Product Id"/>
+								<Input id="name" value="{local>/product/PRODUCT_ID}"/>
+								<Label text="Name"/>
+								<Input value="{local>/product/NAME}"></Input>
+								<Label text="Description"/>
+								<Input value="{local>/product/DESCRIPTION}"></Input>
+								<Label text="Price/Currency"/>
+								<Input value="{local>/product/PRICE}">
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S4"/>
+									</layoutData>
+								</Input>
+								<Input value="{local>/product/CURRENCY_CODE}"/>
+								<Label text="Supplier Id"/>
+								<Input value="{local>/product/SUPPLIER_ID}" valueHelpOnly="true"
+								valueHelpRequest="onSuppReq" showValueHelp="true"></Input>
+								<Text text="" id="mazaaavigiyo"></Text>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar>
+						<ToolbarSpacer />
+						<Button icon="sap-icon://save" text="Save" press="onSave"></Button>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

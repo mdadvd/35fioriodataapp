@@ -1,0 +1,32 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZSEP_ODATA_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="Product" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="PRODUCT_ID"/>
+                </Key>
+                <Property Name="PRODUCT_ID" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Balu" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TYPE_CODE" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:filterable="false"/>
+                <Property Name="CATEGORY" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:sortable="false"/>
+                <Property Name="NAME" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:filterable="false"/>
+                <Property Name="DESCRIPTION" Type="Edm.String" Nullable="false" MaxLength="120" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUPPLIER_ID" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SUPPLIER_NAME" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TAX_TARIF_CODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PRICE" Type="Edm.Decimal" Nullable="false" Precision="31" Scale="0" sap:unicode="false" sap:unit="CURRENCY_CODE" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CURRENCY_CODE" Type="Edm.String" Nullable="false" sap:unicode="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZSEP_ODATA_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ProductSet" EntityType="ZSEP_ODATA_SRV.Product" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZSEP_ODATA_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZSEP_ODATA_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
